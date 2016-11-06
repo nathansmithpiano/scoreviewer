@@ -1,12 +1,12 @@
+/*remove padding*/
 body {
-    /*remove padding*/
     margin: 0;
     padding: 0;
     
     /*hide scroll bars, does not work on mobile */
     overflow-x:hidden;
     overflow-y:hidden;
-            
+    
     /*prevent standard tap-hold menu*/
     -webkit-touch-callout: none; /* iOS Safari */
             
