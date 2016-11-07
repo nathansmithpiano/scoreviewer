@@ -1,0 +1,49 @@
+.testInfo {
+    
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: 'Pragati Narrow', sans-serif;
+    padding: 2px;
+    z-index: 1;
+    position: absolute;
+    background-color: blanchedalmond;
+    border-color: black;
+    border: double;
+    right: 40px;
+    top: 40px;
+    opacity: .6;
+    
+}
+
+.testInfo h2 {
+    /*line-height: 0;*/
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+.testInfo table {
+    padding: 0px;
+    line-height: 1;
+}
+
+#testInfoSpacer {
+    width: 20px;
+}
+
+.testInfo p {
+    /*line-height: 0;*/
+}
+
+#testInfoMessage {
+    font-size: 14px;
+    color: blue;
+    position: relative;
+    cursor: default;
+    text-align: center;
+}
+
+.score {
+    z-index: 2;
+}

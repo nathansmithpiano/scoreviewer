@@ -1,12 +1,24 @@
+/* Notes: 
+@media width/height uses CSS pixels, so ppi not an issue?
+However, will this force scaling to low-res images for high-res devices?
+Ideally, render each line as close to its physical size would be on a printed page
 
-@media only screen and (max-width: 3000px) {
+Physical = width / 96 * pixel-ratio
+Physical = calc(width / 96 * -webkit-min-device-pixel-ratio)
+
+*/
+
+/*Screen size beyond */
+@media only screen and (min-width: 1824px) {
     
 }
 
-@media only screen and (max-width: 2500px) {
+/*Tablets*/
+@media only screen and (max-width: 1366) {
     
 }
 
+/*Smartphones*/
 @media only screen and (max-width: 2000px) {
     
 }

@@ -2,33 +2,119 @@
     
     <head>
         
-        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="user-scalable=no,initial-scale=1"/>
         
         <title>@Media Test</title>
         
         <link href="protections.css" rel="stylesheet" type="text/css">
         <link href="grid.css" rel="stylesheet" type="text/css">
-        <link href="mobile.css" rel="stylesheet" type="text/css">
+        <!--<link href="mobile.css" rel="stylesheet" type="text/css">-->
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow" rel="stylesheet">
         
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="protections.js"></script>
+        <script src="jquery.documentsize.js"></script>
+        <script src="display.js"></script>
         
     </head>
     
     <body>
         
-        <div id="score">
-            <div id="1"><img src="scores/test/blue.png"></div>
-            <div id="2"><img src="scores/test/green.png"></div>
-            <div id="3"><img src="scores/test/orange.png"></div>
-            <div id="4"><img src="scores/test/pink.png"></div>
-            <div id="5"><img src="scores/test/red.png"></div>
+        <div class="testInfo">
+            <!--<h2>Testing Info Panel</h2>-->
+            <table>
+                <tr>
+                    <td>pWidth: </td>
+                    <td id="pWidth"></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>pRatio: </td>
+                    <td id="pRatio"></td>
+                </tr>
+                <tr>
+                    <td>pHeight: </td>
+                    <td id="pHeight"></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>pPpi: </td>
+                    <td id="pPpi"></td>
+                </tr>
+                <tr>
+                    <td>cWidth: </td>
+                    <td id="cWidth"></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>cPpi: </td>
+                    <td id="cPpi"></td>
+                </tr>
+                <tr>
+                    <td>cHeight: </td>
+                    <td id="cHeight"></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>ePpi: </td>
+                    <td id="ePpi"></td>
+                </tr>
+                <tr>
+                    <td>tWidth: </td>
+                    <td id="tWidth"></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>aWidth: </td>
+                    <td id="aWidth">DEL</td>
+                </tr>
+                <tr>
+                    <td>tHeight: </td>
+                    <td id="tHeight"></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>aHeight: </td>
+                    <td id="aHeight">DEL</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>aDiag: </td>
+                    <td id="aDiag">DEL</td>
+                </tr>
+                <tr>
+                    <td>VP-W: </td>
+                    <td id="vpWidth"></td>
+                    <td id="testInfoSpacer"></td>
+                    <td>VP-H: </td>
+                    <td id="vpHeight"></td>
+                </tr>
+            </table>
+            <p id="testInfoMessage">CONFIG YOUR DEVICE</p>
         </div>
         
         
+        <!--score images-->
+        <div class="score">
+            <div id="IMG-1"><img src="scores/test/blue.png"></div>
+            <div id="IMG-2"><img src="scores/test/green.png"></div>
+            <div id="IMG-3"><img src="scores/test/orange.png"></div>
+            <div id="IMG-4"><img src="scores/test/pink.png"></div>
+            <div id="IMG-5"><img src="scores/test/red.png"></div>
+        </div>
+        
+        
+        
+        
         <script>
-            
+        
+        $( document ).ready(function() {
+            createTestPanel();
+        });
+        
+        $( window ).resize(function() {
+            updateTestPanel();
+        });
+        
+        $( window ).on( "orientationchange", function( event ) {
+            updateTestPanel();
+        });
+        
+        $("#testInfoMessage").click(function() {
+            configDevice();
+        })
             
             
             
